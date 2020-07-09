@@ -7,7 +7,8 @@
              x:Class="horticurio.Views.TrackerPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Schedule!"
+            <Image Source="horticurioicon.png"/>
+            <Label Text="Welcome to Tracker!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
