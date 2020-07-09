@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:horticurio.Views"
+       x:Class="horticurio.AppShell">
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="Black" />
+            <Setter Property="Shell.TitleColor"
+                    Value="Black" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="PlantPageShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#FFFFFF" />
+            <Setter Property="Shell.TitleColor"
+                    Value="#4D9078" />
+        </Style>
+        <Style x:Key="TrackerPageShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#FFFFFF" />
+            <Setter Property="Shell.TitleColor"
+                    Value="#B5E2FA" />
+        </Style>
+        <Style x:Key="AccountPageShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#FFFFFF" />
+            <Setter Property="Shell.TitleColor"
+                    Value="#F7A072" />
+        </Style>
+    </Shell.Resources>
+    <FlyoutItem Route="activities"
+                Title="Activities"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="plants"
+                      Style="{StaticResource PlantPageShell}"
+                      Title="Plants"
+                      Icon="PlantIcon.png"
+                      ContentTemplate="{DataTemplate views:PlantPage}" />
+        <ShellContent Route="tracker"
+                      Style="{StaticResource TrackerPageShell}"
+                      Title="Tracker"
+                      Icon="AddIcon.png"
+                      ContentTemplate="{DataTemplate views:TrackerPage}" />
+        <ShellContent Route="account"
+                      Style="{StaticResource AccountPageShell}"
+                      Title="Account"
+                      Icon="AccountIcon.png"
+                      ContentTemplate="{DataTemplate views:AccountPage}" />
+    </FlyoutItem>
+
+</Shell>
