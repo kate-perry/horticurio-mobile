@@ -42,24 +42,31 @@
                     Value="#F7A072" />
         </Style>
     </Shell.Resources>
-    <FlyoutItem Route="activities"
+    <FlyoutItem x:Name="MainTabBar"
+                Route="activities"
                 Title="Activities"
                 FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Route="plants"
-                      Style="{StaticResource PlantPageShell}"
+        <ShellSection x:Name="PlantTab"
                       Title="Plants"
-                      Icon="PlantIcon.png"
+                      Icon="PlantIcon.png" >
+            <ShellContent Route="plants"
+                      Style="{StaticResource PlantPageShell}"
                       ContentTemplate="{DataTemplate views:PlantPage}" />
-        <ShellContent Route="tracker"
-                      Style="{StaticResource TrackerPageShell}"
+        </ShellSection>
+        <ShellSection x:Name="HomeTab"
                       Title="Tracker"
-                      Icon="AddIcon.png"
+                      Icon="AddIcon.png" >
+            <ShellContent Route="tracker"
+                      Style="{StaticResource TrackerPageShell}"
                       ContentTemplate="{DataTemplate views:TrackerPage}" />
-        <ShellContent Route="account"
-                      Style="{StaticResource AccountPageShell}"
+        </ShellSection>
+        <ShellSection x:Name="AccountTab"
                       Title="Account"
-                      Icon="AccountIcon.png"
+                      Icon="AccountIcon.png" >
+            <ShellContent Route="account"
+                      Style="{StaticResource AccountPageShell}"
                       ContentTemplate="{DataTemplate views:AccountPage}" />
+        </ShellSection>
     </FlyoutItem>
 
 </Shell>

@@ -15,6 +15,7 @@ namespace horticurio
         public AppShell()
         {
             InitializeComponent();
+            MainTabBar.CurrentItem = HomeTab;
         }
     }
 }
